@@ -1,3 +1,5 @@
+const prompt = require('prompt-sync')();
+
 var numeroSecreto = Math.floor(Math.random() * 1001); // Math.floor arredonda para baixo o número aleatório
 
 while (true) {
@@ -14,8 +16,8 @@ while (true) {
         alert('Parabéns, você acertou!');
         break; // Encerra o loop quando o número é acertado
     } else if (chute > numeroSecreto) {
-        alert('Errou. O número secreto é menor que ' + chute);
+        console.log('Errou. O número secreto é menor que ' + chute); //para o navegador utilizar alert para o visual console.log
     } else if (chute < numeroSecreto) {
-        alert('Errou. O número secreto é maior que ' + chute);
+        console.log('Errou. O número secreto é maior que ' + chute);
     }
 }
