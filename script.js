@@ -1,16 +1,21 @@
-var numeroSecreto = parseInt(Math.random() * 1001);
+var numeroSecreto = Math.floor(Math.random() * 1001); // Math.floor arredonda para baixo o número aleatório
 
-//While laços de repetição
-// Sinal ! sinal de negação diferente de igual exemplo
-while(chute != numeroSecreto){
-    //prompt para fazer caixa de pergunta
+while (true) {
     var chute = prompt('Digite um número entre 0 e 1000');
-    //se o chute for igual ao número secreto
-    if (chute == numeroSecreto) {
-      alert('Parabéns acertou!')
-    } else if (chute > numeroSecreto) { //Condição else if se não for abre outra condição
-      alert('Errou..... o número secreto é menor que ' + chute )
+
+    if (chute === null) {
+        alert('Jogo cancelado.');
+        break; // Se o usuário cancelar, o loop é interrompido
+    }
+
+    chute = parseInt(chute); // Converter a entrada para um número
+
+    if (chute === numeroSecreto) {
+        alert('Parabéns, você acertou!');
+        break; // Encerra o loop quando o número é acertado
+    } else if (chute > numeroSecreto) {
+        alert('Errou. O número secreto é menor que ' + chute);
     } else if (chute < numeroSecreto) {
-      alert('Errou..... o número secreto é maior que ' + chute)
+        alert('Errou. O número secreto é maior que ' + chute);
     }
 }
